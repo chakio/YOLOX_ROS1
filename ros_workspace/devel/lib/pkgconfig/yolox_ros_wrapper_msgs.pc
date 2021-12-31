@@ -1,0 +1,8 @@
+prefix=/catkin_ws/devel
+
+Name: yolox_ros_wrapper_msgs
+Description: Description of yolox_ros_wrapper_msgs
+Version: 0.0.0
+Cflags: -I/catkin_ws/devel/include
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,9 @@
+string                                              class_name
+int32                                               class_id
+float32                                             score
+int32                                               x0
+int32                                               x1
+int32                                               y0
+int32                                               y1
+int32                                               image_width
+int32                                               image_height

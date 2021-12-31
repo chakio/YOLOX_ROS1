@@ -1,0 +1,1 @@
+yolox_ros_wrapper_msgs/YoloxDetectedObject[] detected_objects
