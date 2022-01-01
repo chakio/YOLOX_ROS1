@@ -47,5 +47,8 @@ RUN apt install -y \
     python3-wstool \
     build-essential 
 
+RUN apt install -y \
+     ros-noetic-qt-gui-core \
+     ros-noetic-rqt
 ENTRYPOINT ["/ros_entrypoint.sh"]
 CMD ["bash"]

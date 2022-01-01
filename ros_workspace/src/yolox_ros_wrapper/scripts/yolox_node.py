@@ -154,8 +154,9 @@ class YoloxNode:
             height = round(h * (width / w))
             resized_image = cv2.resize(cv_image, dsize=(width, height))
             result, result_image = self.get_inference_result(resized_image)
-            self.output_pub.publish(result)
-            self.image_pub.publish(self.bridge.cv2_to_imgmsg(result_image, "bgr8"))
+            if result is not None:
+                self.output_pub.publish(result)
+                self.image_pub.publish(self.bridge.cv2_to_imgmsg(result_image, "bgr8"))
             # cv2.imshow('color', cv_image)
             # ch = cv2.waitKey(1)
 
@@ -164,12 +165,15 @@ class YoloxNode:
 
     def get_inference_result(self, image):
         outputs, img_info = self.yolox_handler.predictor.inference(image)
-        result = self.get_output_msgs(outputs[0], image)
-        
-        result_image = self.yolox_handler.predictor.visual(outputs[0], img_info, self.yolox_handler.predictor.confthre)
+        if outputs[0] is not None:
+            result = self.get_output_msgs(outputs[0], image)
+            result_image = self.yolox_handler.predictor.visual(outputs[0], img_info, self.yolox_handler.predictor.confthre)
+            return result, result_image
+        else:
+            return None, None
         # cv2.imshow('color',result_image)
         # ch = cv2.waitKey(1)
-        return result, result_image
+        
 
     def get_output_msgs(self, outputs, image):
         msgs = YoloxOutput()

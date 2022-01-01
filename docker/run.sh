@@ -43,7 +43,7 @@ if [ $? -ne 0 ]; then
         -v /etc/passwd:/etc/passwd:ro \
         -v /dev:/dev \
         --net host \
-        yolox_ros1:devel_wo_gpu
+        active_track:devel_wo_gpu
 
 else
     echo "========================="
@@ -65,5 +65,5 @@ else
         -v /etc/passwd:/etc/passwd:ro \
         -v /dev:/dev \
         --net host \
-        yolox_ros1:devel_w_gpu
+        active_track:devel_w_gpu
     fi

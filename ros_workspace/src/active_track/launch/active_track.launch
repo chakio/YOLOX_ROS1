@@ -1,0 +1,9 @@
+<launch>
+     <node pkg="active_track" name="active_track" type="active_track.py" output="screen"/>
+     <node pkg="active_track" name="pcd_store" type="pcd_store" output="screen"/>
+     <node pkg="active_track" name="gui" type="gui.py" output="screen"/>
+     <node pkg="yolox_ros_wrapper" name="yolox_node" type="yolox_node.py" output="screen"/>
+     <!-- Display -->
+     <node pkg="rviz" type="rviz" name="rviz" args="-d $(find active_track)/rviz/active_track.rviz" />
+
+</launch>

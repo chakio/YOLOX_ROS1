@@ -1,2 +1,2 @@
-yolox_ros_wrapper:yolox_ros_wrapper_msgs
+active_track:yolox_ros_wrapper:yolox_ros_wrapper_msgs
 -DCATKIN_DEVEL_PREFIX=/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/catkin_ws/install -G Unix Makefiles
